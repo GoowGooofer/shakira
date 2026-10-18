@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Шакира · Бишкек · 18 октября 2026 · Bishkek Arena</title>
+<meta name="description" content="Билеты на концерт Шакиры в Бишкеке. 18 октября 2026, Bishkek Arena.">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #f4f1e8;
+    --bg-card: #ffffff;
+    --text: #1a1a1a;
+    --muted: #6f6b62;
+    --dim: #9b958a;
+    --line: #d8d2c2;
+    --accent: #a82a4a;
+    --qr-bg: #ffffff;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+
+  /* ===== HEADER ===== */
+  .site-header {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 16px; padding-bottom: 16px;
+  }
+  .brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 6px;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav { display: flex; gap: 32px; }
+  .nav a {
+    font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color .15s;
+  }
+  .nav a:hover { color: var(--text); }
+  .header-meta {
+    font-size: 12px; letter-spacing: 1.5px; color: var(--muted);
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding: 110px 0 80px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero .eyebrow {
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 56px;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(72px, 11vw, 168px);
+    line-height: 0.96;
+    letter-spacing: -2px;
+    margin-bottom: 80px;
+  }
+  .hero .details {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+  }
+  .hero .details .label {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 14px;
+  }
+  .hero .details .value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px; font-weight: 500; line-height: 1.15;
+  }
+  .hero .details .sub {
+    font-size: 14px; color: var(--muted); margin-top: 6px;
+    font-family: 'Inter', sans-serif;
+  }
+  .hero .cta {
+    margin-top: 60px;
+    display: flex; align-items: center; gap: 28px;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--text); color: var(--bg);
+    padding: 16px 30px;
+    font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background .15s;
+  }
+  .btn-primary:hover { background: var(--accent); }
+  .btn-link {
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--text);
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--text);
+  }
+  .btn-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* ===== COMMON SECTIONS ===== */
+  section { padding: 100px 0; border-bottom: 1px solid var(--line); }
+  .section-head { margin-bottom: 60px; }
+  .section-label {
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 20px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(34px, 4.5vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+    max-width: 760px;
+  }
+  .section-lead {
+    color: var(--muted);
+    max-width: 620px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* ===== MARQUEE (бегущая строка хитов) ===== */
+  .marquee-wrap {
+    overflow: hidden;
+    background: #181818;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 32px 0;
+  }
+  .marquee {
+    display: flex;
+    gap: 64px;
+    animation: marquee-scroll 42s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+    align-items: center;
+    will-change: transform;
+  }
+  .marquee-wrap:hover .marquee { animation-play-state: paused; }
+  .m-item {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px; font-weight: 500; font-style: italic;
+    color: #f4f1e8;
+    letter-spacing: 1px;
+    display: inline-flex; align-items: center;
+    gap: 64px;
+  }
+  .m-item::after {
+    content: '★';
+    color: var(--accent);
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ===== TOURS (предыдущие туры) ===== */
+  .tours-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 50px;
+  }
+  .tour-tile {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease;
+    overflow: hidden;
+  }
+  .tour-tile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 32px rgba(26, 26, 26, 0.10);
+  }
+  .tour-poster {
+    aspect-ratio: 11 / 14;
+    overflow: hidden;
+    line-height: 0;
+  }
+  .tour-poster svg { display: block; width: 100%; height: 100%; }
+  .tour-meta {
+    padding: 22px 20px;
+    border-top: 1px solid var(--line);
+  }
+  .tour-year {
+    font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 10px;
+  }
+  .tour-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 500; line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .tour-stats {
+    font-size: 12px; color: var(--muted);
+  }
+
+  /* ===== STATS ===== */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-top: 50px;
+  }
+  .stat {
+    padding: 50px 32px;
+    text-align: center;
+    border-right: 1px solid var(--line);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(54px, 7vw, 84px);
+    font-weight: 500; line-height: 1;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-label {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 18px;
+  }
+
+  /* ===== COUNTDOWN ===== */
+  .countdown {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .count-cell {
+    padding: 32px 24px; text-align: center;
+    border-right: 1px solid var(--line);
+  }
+  .count-cell:last-child { border-right: none; }
+  .count-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(46px, 6vw, 68px);
+    font-weight: 500;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .count-label {
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 14px;
+  }
+
+  /* ===== TICKETS ===== */
+  .tickets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+    margin-top: 50px;
+  }
+  .ticket-card {
+    background: var(--bg-card);
+    padding: 36px 32px 32px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    display: flex; flex-direction: column;
+  }
+  .ticket-card .cat {
+    font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 16px;
+  }
+  .ticket-card h5 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 500; line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .ticket-card .desc {
+    font-size: 13px; color: var(--muted);
+    margin-bottom: 28px;
+    min-height: 48px;
+    line-height: 1.5;
+  }
+  .ticket-card .prices { margin-bottom: 24px; }
+  .ticket-card .old {
+    font-size: 14px; color: var(--dim);
+    text-decoration: line-through;
+  }
+  .ticket-card .new {
+    display: flex; align-items: baseline; gap: 8px;
+    margin-top: 4px;
+  }
+  .ticket-card .new .amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; font-weight: 500; line-height: 1;
+  }
+  .ticket-card .new .currency {
+    font-size: 13px; color: var(--muted);
+    text-transform: lowercase;
+  }
+  .ticket-card .save {
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 1px;
+    margin-top: 8px;
+  }
+  .ticket-card .buy {
+    margin-top: auto;
+    background: transparent;
+    border: 1px solid var(--text);
+    color: var(--text);
+    padding: 12px 16px;
+    font-family: inherit;
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    cursor: pointer;
+    transition: background .15s, color .15s;
+    font-weight: 500;
+  }
+  .ticket-card .buy:hover { background: var(--text); color: var(--bg); }
+
+  /* ===== VENUE ===== */
+  .venue-grid {
+    display: grid; grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .info-row {
+    display: flex; padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+  }
+  .info-row .label {
+    flex: 0 0 200px;
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 3px;
+  }
+  .venue-map {
+    width: 100%; aspect-ratio: 4/3;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+  }
+  .venue-map svg { display: block; width: 100%; height: 100%; }
+  .venue-caption {
+    font-size: 12px; color: var(--muted);
+    margin-top: 16px; line-height: 1.5;
+  }
+
+  /* ===== FAQ ===== */
+  .faq-list { max-width: 760px; border-top: 1px solid var(--line); margin-top: 40px; }
+  .faq-item {
+    border-bottom: 1px solid var(--line);
+  }
+  .faq-q {
+    padding: 22px 0;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 500;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 20px;
+  }
+  .faq-q .toggle {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px; font-weight: 300;
+    color: var(--muted);
+    transition: transform .2s;
+    flex-shrink: 0;
+  }
+  .faq-item.open .toggle { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height .25s ease;
+    color: var(--muted); font-size: 15px; line-height: 1.7;
+  }
+  .faq-item.open .faq-a { max-height: 360px; padding-bottom: 22px; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 70px 0 50px;
+  }
+  footer .mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px; font-weight: 500;
+    letter-spacing: 6px;
+    color: var(--text);
+    margin-bottom: 18px;
+  }
+  footer .meta {
+    font-size: 12px; color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ===== MODAL ===== */
+  .modal-bg {
+    position: fixed; inset: 0; z-index: 200;
+    background: rgba(26, 26, 26, 0.4);
+    display: none; align-items: flex-start; justify-content: center;
+    padding: 60px 24px 24px;
+    overflow-y: auto;
+  }
+  .modal-bg.open { display: flex; }
+  .modal {
+    background: var(--bg);
+    width: 100%; max-width: 480px;
+    padding: 48px 40px 40px;
+    border: 1px solid var(--line);
+    position: relative;
+  }
+  .modal-close {
+    position: absolute; top: 14px; right: 14px;
+    width: 32px; height: 32px;
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: 22px; color: var(--muted);
+    cursor: pointer;
+    line-height: 1;
+  }
+  .modal-close:hover { color: var(--text); }
+  .modal h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px; font-weight: 500; line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .modal-sub {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 32px;
+    line-height: 1.5;
+  }
+  .m-summary {
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 28px;
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .m-summary .label {
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 6px;
+  }
+  .m-summary .cat {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 500;
+  }
+  .m-summary .price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px; font-weight: 500; text-align: right;
+  }
+  .m-summary .old {
+    font-size: 13px; color: var(--dim);
+    text-decoration: line-through;
+    text-align: right;
+    margin-bottom: 4px;
+  }
+  .form-row { margin-bottom: 18px; }
+  .form-row label {
+    display: block;
+    font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .form-row input {
+    width: 100%; padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    color: var(--text);
+    font-family: inherit; font-size: 15px;
+    transition: border-color .15s;
+  }
+  .form-row input:focus {
+    outline: none;
+    border-bottom-color: var(--text);
+  }
+  .qr-box {
+    margin: 28px 0;
+    padding: 24px;
+    background: var(--qr-bg);
+    border: 1px solid var(--line);
+    text-align: center;
+  }
+  #finik-qr { display: inline-block; line-height: 0; }
+  #finik-qr canvas, #finik-qr img { display: block; margin: 0 auto; }
+  .qr-caption {
+    font-size: 12px; color: var(--muted);
+    margin-top: 14px; line-height: 1.5;
+  }
+  .pay-btn {
+    width: 100%; padding: 15px;
+    background: var(--text); color: var(--bg);
+    border: none;
+    font-family: inherit;
+    font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .15s;
+  }
+  .pay-btn:hover { background: var(--accent); }
+  .modal-note {
+    font-size: 12px; color: var(--muted);
+    margin-top: 14px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 880px) {
+    .wrap { padding: 0 24px; }
+    .hero { padding: 70px 0 60px; }
+    .hero h1 { margin-bottom: 56px; }
+    .hero .details { grid-template-columns: 1fr; gap: 32px; }
+    section { padding: 70px 0; }
+    .tickets-grid { grid-template-columns: 1fr; }
+    .venue-grid { grid-template-columns: 1fr; gap: 48px; }
+    .countdown { grid-template-columns: repeat(2, 1fr); }
+    .count-cell { padding: 24px 16px; }
+    .nav { display: none; }
+      .modal { padding: 36px 24px 32px; }
+    }
+    .tours-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat { padding: 36px 18px; }
+    .stat:nth-child(2n) { border-right: none; }
+    .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    .m-item { font-size: 26px; gap: 36px; }
+    .m-item::after { font-size: 18px; }
+  }
+</style>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="#" class="brand">SHAKIRA</a>
+    <nav class="nav">
+      <a href="#tickets">Билеты</a>
+      <a href="#venue">Площадка</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <span class="header-meta">18 · 10 · Бишкек</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Las Mujeres Ya No Lloran · World Tour</div>
+    <h1>Шакира</h1>
+    <div class="details">
+      <div>
+        <div class="label">Дата</div>
+        <div class="value">Воскресенье<br>18 октября 2026</div>
+        <div class="sub">Начало в 19:00</div>
+      </div>
+      <div>
+        <div class="label">Площадка</div>
+        <div class="value">Bishkek Arena</div>
+        <div class="sub">мкр. Орок, ул. Алтын-Бешик 77/2а</div>
+      </div>
+      <div>
+        <div class="label">Билеты</div>
+        <div class="value">от 9 600 сом</div>
+        <div class="sub">Цены со скидкой 20%</div>
+      </div>
+    </div>
+    <div class="cta">
+      <a href="#tickets" class="btn-primary">Купить билет</a>
+      <a href="#venue" class="btn-link">О площадке</a>
+    </div>
+  </div>
+  </section>
+
+  <!-- Бегущая строка хитов -->
+  <div class="marquee-wrap">
+    <div class="marquee">
+      <span class="m-item">Hips Don't Lie</span>
+      <span class="m-item">Whenever Wherever</span>
+      <span class="m-item">Waka Waka (This Time for Africa)</span>
+      <span class="m-item">She Wolf</span>
+      <span class="m-item">La Tortura</span>
+      <span class="m-item">Loca</span>
+      <span class="m-item">Chantaje</span>
+      <span class="m-item">Hips Don't Lie</span>
+      <span class="m-item">Whenever Wherever</span>
+      <span class="m-item">Waka Waka (This Time for Africa)</span>
+      <span class="m-item">She Wolf</span>
+      <span class="m-item">La Tortura</span>
+      <span class="m-item">Loca</span>
+      <span class="m-item">Chantaje</span>
+    </div>
+  </div>
+
+  <!-- Предыдущие мировые туры -->
+  <section id="tours">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-label">Предыдущие туры</div>
+        <div class="section-title">Пять мировых туров. Пятнадцать лет.</div>
+        <p class="section-lead">Las Mujeres Ya No Lloran — пятый мировой тур Шакиры. До Бишкека она собрала стадионы и арены от Мехико до Парижа, от Боготы до Стамбула.</p>
+      </div>
+      <div class="tours-grid">
+
+        <div class="tour-tile">
+          <div class="tour-poster">
+            <svg viewBox="0 0 220 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+              <defs><linearGradient id="dorado" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#a07a28"/><stop offset="50%" stop-color="#c89a3e"/><stop offset="100%" stop-color="#5a3f10"/></linearGradient></defs>
+              <rect width="220" height="280" fill="url(#dorado)"/>
+              <g opacity="0.3" stroke="#fff" stroke-width="0.6" fill="none">
+                <line x1="110" y1="280" x2="110" y2="40"/><line x1="50" y1="280" x2="100" y2="40"/>
+                <line x1="170" y1="280" x2="120" y2="40"/><line x1="20" y1="280" x2="90" y2="40"/>
+                <line x1="200" y1="280" x2="130" y2="40"/><line x1="0" y1="280" x2="80" y2="40"/>
+                <line x1="220" y1="280" x2="140" y2="40"/>
+              </g>
+              <circle cx="110" cy="120" r="36" fill="#fff" opacity="0.18"/>
+              <circle cx="110" cy="120" r="22" fill="#fff" opacity="0.40"/>
+              <line x1="0" y1="200" x2="220" y2="200" stroke="#fff" stroke-width="1" opacity="0.5"/>
+              <text x="110" y="245" font-family="Cormorant Garamond, serif" font-size="30" font-style="italic" fill="#fff" text-anchor="middle">El Dorado</text>
+              <text x="110" y="265" font-family="Inter, sans-serif" font-size="9" letter-spacing="3" fill="#fff" text-anchor="middle" opacity="0.85">2018 · WORLD TOUR</text>
+            </svg>
+          </div>
+          <div class="tour-meta">
+            <div class="tour-year">2018</div>
+            <div class="tour-name">El Dorado</div>
+            <div class="tour-stats">22 страны · 54 концерта</div>
+          </div>
+        </div>
+
+        <div class="tour-tile">
+          <div class="tour-poster">
+            <svg viewBox="0 0 220 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+              <defs><linearGradient id="lmynll" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#226876"/><stop offset="50%" stop-color="#1a4d5e"/><stop offset="100%" stop-color="#0a2a35"/></linearGradient></defs>
+              <rect width="220" height="280" fill="url(#lmynll)"/>
+              <g opacity="0.32" stroke="#fff" stroke-width="0.5">
+                <line x1="30" y1="0" x2="30" y2="280"/><line x1="55" y1="0" x2="55" y2="280"/>
+                <line x1="80" y1="0" x2="80" y2="280"/><line x1="105" y1="0" x2="105" y2="280"/>
+                <line x1="130" y1="0" x2="130" y2="280"/><line x1="155" y1="0" x2="155" y2="280"/>
+                <line x1="180" y1="0" x2="180" y2="280"/>
+              </g>
+              <g opacity="0.4" fill="#fff">
+                <ellipse cx="110" cy="80" rx="20" ry="22"/>
+                <path d="M85 110 Q110 105 135 110 L130 175 Q110 185 90 175 Z"/>
+              </g>
+              <text x="110" y="225" font-family="Cormorant Garamond, serif" font-size="22" fill="#fff" text-anchor="middle">Las Mujeres</text>
+              <text x="110" y="253" font-family="Cormorant Garamond, serif" font-size="22" font-style="italic" fill="#fff" text-anchor="middle">Ya No Lloran</text>
+              <text x="110" y="270" font-family="Inter, sans-serif" font-size="9" letter-spacing="3" fill="#fff" text-anchor="middle" opacity="0.7">2024 — 2026</text>
+            </svg>
+          </div>
+          <div class="tour-meta">
+            <div class="tour-year">2024</div>
+            <div class="tour-name">Las Mujeres Ya No Lloran</div>
+            <div class="tour-stats">Мировой тур · в процессе</div>
+          </div>
+        </div>
+
+        <div class="tour-tile">
+          <div class="tour-poster">
+            <svg viewBox="0 0 220 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+              <defs><radialGradient id="sol" cx="50%" cy="58%" r="60%"><stop offset="0%" stop-color="#f9b56a"/><stop offset="50%" stop-color="#e87a2a"/><stop offset="100%" stop-color="#7d2810"/></radialGradient></defs>
+              <rect width="220" height="280" fill="url(#sol)"/>
+              <g transform="translate(110,150)">
+                <circle r="52" fill="#fff" opacity="0.20"/>
+                <circle r="36" fill="#fff" opacity="0.50"/>
+                <circle r="18" fill="#fff" opacity="0.95"/>
+                <g stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity="0.4">
+                  <line x1="0" y1="-66" x2="0" y2="-92"/><line x1="46" y1="-46" x2="64" y2="-64"/>
+                  <line x1="66" y1="0" x2="92" y2="0"/><line x1="46" y1="46" x2="64" y2="64"/>
+                  <line x1="0" y1="66" x2="0" y2="92"/><line x1="-46" y1="46" x2="-64" y2="64"/>
+                  <line x1="-66" y1="0" x2="-92" y2="0"/><line x1="-46" y1="-46" x2="-64" y2="-64"/>
+                </g>
+              </g>
+              <text x="110" y="50" font-family="Cormorant Garamond, serif" font-size="22" fill="#fff" text-anchor="middle">Sale el Sol</text>
+              <text x="110" y="68" font-family="Inter, sans-serif" font-size="9" letter-spacing="3" fill="#fff" text-anchor="middle" opacity="0.85">2010 · WORLD TOUR</text>
+            </svg>
+          </div>
+          <div class="tour-meta">
+            <div class="tour-year">2010</div>
+            <div class="tour-name">Sale el Sol</div>
+            <div class="tour-stats">Латинская Америка · 32 концерта</div>
+          </div>
+        </div>
+
+        <div class="tour-tile">
+          <div class="tour-poster">
+            <svg viewBox="0 0 220 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+              <defs><linearGradient id="wolf" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3a2050"/><stop offset="100%" stop-color="#150826"/></linearGradient></defs>
+              <rect width="220" height="280" fill="url(#wolf)"/>
+              <g fill="#fff" opacity="0.7">
+                <circle cx="40" cy="32" r="1"/><circle cx="75" cy="55" r="1.2"/><circle cx="105" cy="25" r="0.8"/>
+                <circle cx="140" cy="42" r="1"/><circle cx="180" cy="65" r="1.3"/><circle cx="60" cy="80" r="0.8"/>
+                <circle cx="195" cy="100" r="0.9"/><circle cx="30" cy="110" r="1.1"/><circle cx="160" cy="120" r="0.8"/>
+              </g>
+              <circle cx="160" cy="90" r="34" fill="#fff" opacity="0.95"/>
+              <circle cx="172" cy="82" r="30" fill="#3a2050"/>
+              <path d="M40 220 Q60 180 80 200 Q90 175 110 195 Q125 180 145 200 Q155 195 165 195 Q180 215 175 235 L40 235 Z" fill="#fff" opacity="0.4"/>
+              <text x="110" y="262" font-family="Cormorant Garamond, serif" font-size="30" font-style="italic" fill="#fff" text-anchor="middle">She Wolf</text>
+              <text x="110" y="276" font-family="Inter, sans-serif" font-size="9" letter-spacing="3" fill="#fff" text-anchor="middle" opacity="0.75">2009 · 2010</text>
+            </svg>
+          </div>
+          <div class="tour-meta">
+            <div class="tour-year">2009</div>
+            <div class="tour-name">She Wolf</div>
+            <div class="tour-stats">Северная Америка · Европа</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Цифры карьеры -->
+  <section id="stats">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-label">Цифры</div>
+        <div class="section-title">Карьера в четырёх числах.</div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-num"><span data-count="4">0</span></div>
+          <div class="stat-label">Грэмми</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num"><span data-count="15">0</span></div>
+          <div class="stat-label">Latin Grammy</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num"><span data-count="80" data-suffix="M+">0</span></div>
+          <div class="stat-label">копий альбомов</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num"><span data-count="5">0</span></div>
+          <div class="stat-label">мировых туров</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="countdown">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">До начала концерта</div>
+      <div class="section-title">18 октября 2026, 19:00.</div>
+      <p class="section-lead">До встречи в Bishkek Arena осталось совсем немного.</p>
+    </div>
+    <div class="countdown" id="cd">
+      <div class="count-cell"><div class="count-num" id="d-days">00</div><div class="count-label">Дней</div></div>
+      <div class="count-cell"><div class="count-num" id="d-hours">00</div><div class="count-label">Часов</div></div>
+      <div class="count-cell"><div class="count-num" id="d-minutes">00</div><div class="count-label">Минут</div></div>
+      <div class="count-cell"><div class="count-num" id="d-seconds">00</div><div class="count-label">Секунд</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="tickets">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Билеты</div>
+      <div class="section-title">9 категорий цен — все со скидкой 20%.</div>
+      <p class="section-lead">Официальный партнёр продаж — GovTicket. Сервисный сбор и наценки не добавляются. Количество мест в каждой категории ограничено вместимостью арены после установки сцены.</p>
+    </div>
+    <div class="tickets-grid" id="tickets-grid"></div>
+  </div>
+</section>
+
+<section id="venue">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Площадка</div>
+      <div class="section-title">Bishkek Arena.</div>
+    </div>
+    <div class="venue-grid">
+      <div>
+        <p class="section-lead" style="margin-bottom: 28px;">Новый стадион Кыргызстана на 51 000 зрителей. Открыт 31 августа 2026 года церемонией VI Всемирных игр кочевников. Площадь территории — 85 000 м². На концерте сцена будет установлена у восточной трибуны, поэтому часть мест за ней закрыта для зрителей.</p>
+        <div style="margin-top: 24px;">
+          <div class="info-row"><span class="label">Адрес</span><span>Бишкек, ул. Алтын-Бешик, 77/2а, мкр. Орок</span></div>
+          <div class="info-row"><span class="label">Дата</span><span>Воскресенье, 18 октября 2026, 19:00</span></div>
+          <div class="info-row"><span class="label">Вход</span><span>По электронному билету с QR-кодом</span></div>
+          <div class="info-row"><span class="label">Возрастное огр.</span><span>7+</span></div>
+          <div class="info-row"><span class="label">Транспорт</span><span>Бесплатные автобусы из 6 точек Бишкека, 15:00–18:00</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="venue-map">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="300" fill="#f4f1e8"/>
+            <line x1="0" y1="80" x2="400" y2="100" stroke="#c8c0ad" stroke-width="1"/>
+            <line x1="60" y1="0" x2="120" y2="300" stroke="#c8c0ad" stroke-width="1"/>
+            <line x1="260" y1="0" x2="320" y2="300" stroke="#c8c0ad" stroke-width="1"/>
+            <line x1="0" y1="230" x2="400" y2="220" stroke="#c8c0ad" stroke-width="1"/>
+            <ellipse cx="190" cy="160" rx="48" ry="28" fill="none" stroke="#a82a4a" stroke-width="1"/>
+            <ellipse cx="190" cy="160" rx="20" ry="12" fill="#a82a4a" opacity="0.5"/>
+            <circle cx="190" cy="160" r="4" fill="#a82a4a"/>
+            <text x="30" y="170" font-family="Inter, sans-serif" font-size="9" letter-spacing="2" fill="#9b958a">ЦЕНТР</text>
+            <text x="350" y="170" font-family="Inter, sans-serif" font-size="9" letter-spacing="2" fill="#9b958a">ОРОК</text>
+          </svg>
+        </div>
+        <p class="venue-caption">Стадион находится в юго-западной окраине Бишкека, в микрорайоне Орок. Из центра удобнее всего добираться такси (Яндекс Go). После концерта общественный транспорт в Ороке практически не ходит — закажите машину заранее.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Вопросы и ответы</div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Как работает скидка 20%?<span class="toggle">+</span></div>
+        <div class="faq-a">Базовая цена — официальная цена GovTicket. На сайте применена скидка 20% ко всем девяти категориям. Промокод вводить не нужно — конечная цена указана прямо на карточке билета.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Как оплатить билет?<span class="toggle">+</span></div>
+        <div class="faq-a">Оплата проходит через Finik (qr.finik.kg) — официальная платёжная система Кыргызстана. В модальном окне откроется QR-код — его можно отсканировать в Элсом, MBANK, O!Bank, Bakai или приложении Finik. Также доступна кнопка «Открыть страницу оплаты Finik» для оплаты прямо в браузере.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Когда придёт билет?<span class="toggle">+</span></div>
+        <div class="faq-a">Электронный билет с уникальным QR-кодом приходит на e-mail сразу после оплаты. Сохраните его в телефоне или распечатайте — на входе достаточно показать QR-код. Документ, удостоверяющий личность, рекомендуем иметь при себе.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Безопасно ли покупать здесь?<span class="toggle">+</span></div>
+        <div class="faq-a">Билеты — настоящие электронные с QR-кодом, проходят проверку на входе в Bishkek Arena. Оплата защищена через Finik. Не покупайте билеты у незнакомцев в Telegram-каналах и у перекупщиков — это распространённая схема мошенничества, проход на концерт по таким билетам не гарантирован.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Как добраться до Bishkek Arena?<span class="toggle">+</span></div>
+        <div class="faq-a">Стадион находится в Ороке — это юго-западная окраина Бишкека, а не площадь Ала-Тоо. Самый удобный способ — такси (Яндекс Go) из центра города, 30–40 минут в пути. В день концерта с 15:00 до 18:00 запускают бесплатные автобусы из шести точек Бишкека. После концерта маршруток в Ороке почти нет — заказывайте такси заранее.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="mark">SHAKIRA</div>
+    <p class="meta">Билеты — официальный партнёр GovTicket · Оплата — Finik KG<br>© 2026 · Bishkek Arena · ул. Алтын-Бешик, 77/2а</p>
+  </div>
+</footer>
+
+<div class="modal-bg" id="modal">
+  <div class="modal">
+    <button class="modal-close" id="modal-close" aria-label="Закрыть">×</button>
+    <h3>Оформление билета</h3>
+    <p class="modal-sub">Заполните данные — после оплаты билет с QR-кодом придёт на e-mail.</p>
+
+    <div class="m-summary">
+      <div>
+        <div class="label">Категория</div>
+        <div class="cat" id="modal-cat">—</div>
+      </div>
+      <div>
+        <div class="old" id="modal-old">—</div>
+        <div class="price" id="modal-price">—</div>
+      </div>
+    </div>
+
+    <div class="form-row"><label>Имя и фамилия</label><input type="text" id="f-name" placeholder="Иван Иванов"></div>
+    <div class="form-row"><label>E-mail</label><input type="email" id="f-email" placeholder="email@example.com"></div>
+    <div class="form-row"><label>Телефон</label><input type="tel" id="f-phone" placeholder="+996 ___ ___ ___"></div>
+
+    <div class="qr-box">
+      <div id="finik-qr"></div>
+      <div class="qr-caption">Отсканируйте в банковском приложении:<br>Элсом · MBANK · O!Bank · Bakai · Finik</div>
+    </div>
+
+    <button class="pay-btn" id="pay-finik">Открыть страницу оплаты Finik</button>
+    <div class="modal-note">QR-код и кнопка ведут на одну страницу Finik. Способ оплаты выбирайте на стороне Finik.</div>
+  </div>
+</div>
+
+<script>
+  /* ===== Платёжная конфигурация ===== */
+  const PAYMENT_CONFIG = {
+    finik: {
+      paymentUrl: 'https://qr.finik.kg/08f28c2b-c89a-4a98-894b-8f6ce6bdac2e?type=t',
+      enabled: true
+    }
+  };
+
+  /* ===== Анимация цифр (count-up) при появлении в viewport ===== */
+  (function () {
+    function animate(el, end, suffix, duration) {
+      const start = performance.now();
+      function step(now) {
+        const t = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = Math.round(end * eased) + suffix;
+        if (t < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    if ('IntersectionObserver' in window) {
+      const targets = document.querySelectorAll('[data-count]');
+      const obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          const el  = entry.target;
+          const end = parseInt(el.dataset.count, 10) || 0;
+          const suf = el.dataset.suffix || '';
+          animate(el, end, suf, 1600);
+          obs.unobserve(el);
+        });
+      }, { threshold: 0.4 });
+      targets.forEach(function (el) { obs.observe(el); });
+    } else {
+      document.querySelectorAll('[data-count]').forEach(function (el) {
+        el.textContent = (el.dataset.count || '0') + (el.dataset.suffix || '');
+      });
+    }
+  })();
+
+  /* ===== Обратный отсчёт ===== */
+  (function () {
+    const target = new Date('2026-10-18T19:00:00');
+    const pad = n => String(n).padStart(2, '0');
+    function tick() {
+      const diff = Math.max(0, target - new Date());
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('d-days').textContent = pad(d);
+      document.getElementById('d-hours').textContent = pad(h);
+      document.getElementById('d-minutes').textContent = pad(m);
+      document.getElementById('d-seconds').textContent = pad(s);
+    }
+    tick(); setInterval(tick, 1000);
+  })();
+
+  /* ===== Карточки билетов ===== */
+  const tickets = [
+    { cat: 'Fan Zone',  name: 'Фан-зона у сцены',         desc: 'Сектора A и C, прямо перед сценой.',     new: 32000, old: 40000, save: 8000 },
+    { cat: 'Категория 1', name: 'Нижний ярус, боковые',  desc: 'Сектора 137–140, 147–150.',              new: 32000, old: 40000, save: 8000 },
+    { cat: 'Категория 2', name: 'Второй ярус, углы',     desc: 'Сектора 101–136, 305–328.',              new: 27200, old: 34000, save: 6800 },
+    { cat: 'Skybox',     name: 'VIP-ложа',                 desc: 'Ложа на 15–20 человек, бар и холл.',     new: 24000, old: 30000, save: 6000 },
+    { cat: 'Категория 3', name: 'Центральная трибуна D', desc: 'Сектора 151–154, 269–273 — фронт.',     new: 22400, old: 28000, save: 5600 },
+    { cat: 'Ground',    name: 'Танцевальный партер',     desc: 'Стоячие места за фан-зонами.',           new: 21600, old: 27000, save: 5400 },
+    { cat: 'Категория 4', name: 'Верхние ярусы',         desc: 'Сектора 267, 268, 274, 275, 333–338.',   new: 17600, old: 22000, save: 4400 },
+    { cat: 'Категория 5', name: 'Верхние ряды',           desc: 'Сектора 301–303, 404–407, 330–332.',     new: 10800, old: 13500, save: 2700 },
+    { cat: 'Restricted', name: 'Ограниченный обзор',     desc: 'Сектора 141, 146, 162, 165, 308 и др.',   new:  9600, old: 12000, save: 2400 }
+  ];
+
+  const fmt = n => Number(n).toLocaleString('ru-RU');
+  const grid = document.getElementById('tickets-grid');
+  tickets.forEach(t => {
+    const el = document.createElement('div');
+    el.className = 'ticket-card';
+    el.innerHTML =
+      '<div class="cat">' + t.cat + '</div>' +
+      '<h5>' + t.name + '</h5>' +
+      '<div class="desc">' + t.desc + '</div>' +
+      '<div class="prices">' +
+        '<div class="old">' + fmt(t.old) + ' сом</div>' +
+        '<div class="new"><span class="amount">' + fmt(t.new) + '</span><span class="currency">сом</span></div>' +
+        '<div class="save">−20% · выгода ' + fmt(t.save) + ' сом</div>' +
+      '</div>' +
+      '<button class="buy" data-cat="' + t.cat + '" data-name="' + t.name + '" data-new="' + t.new + '" data-old="' + t.old + '">Купить</button>';
+    grid.appendChild(el);
+  });
+
+  /* ===== Модалка и оплата ===== */
+  const modal = document.getElementById('modal');
+  let order = {};
+
+  function generateQR() {
+    const cfg = PAYMENT_CONFIG.finik;
+    const el = document.getElementById('finik-qr');
+    if (!el) return;
+    el.innerHTML = '';
+    if (!cfg.enabled || !cfg.paymentUrl) {
+      el.innerHTML = '<div style="width:160px;height:160px;background:#fff;display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;padding:10px;border-radius:8px;color:#666;line-height:1.4;">QR недоступен.<br>Проверьте<br>PAYMENT_CONFIG</div>';
+      return;
+    }
+    try {
+      const url = cfg.paymentUrl
+        + (cfg.paymentUrl.includes('?') ? '&' : '?')
+        + 'order=' + encodeURIComponent('SK-' + Date.now())
+        + '&cat=' + encodeURIComponent(order.cat)
+        + '&amount=' + encodeURIComponent(order.new);
+      new QRCode(el, {
+        text: url, width: 160, height: 160,
+        colorDark: '#1a1a1a', colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.M
+      });
+    } catch (e) {
+      el.innerHTML = '<div style="width:160px;height:160px;background:#fff;color:#666;display:flex;align-items:center;justify-content:center;font-size:12px;border-radius:8px;">Ошибка</div>';
+    }
+  }
+
+  function openFinik() {
+    const cfg = PAYMENT_CONFIG.finik;
+    if (!cfg.enabled || !cfg.paymentUrl) { alert('Finik не настроен.'); return; }
+    const orderId = 'SK-' + Date.now();
+    const url = cfg.paymentUrl
+      + (cfg.paymentUrl.includes('?') ? '&' : '?')
+      + 'order=' + encodeURIComponent(orderId)
+      + '&cat=' + encodeURIComponent(order.cat)
+      + '&amount=' + encodeURIComponent(order.new);
+    window.open(url, '_blank', 'noopener');
+    modal.classList.remove('open');
+  }
+
+  document.querySelectorAll('.buy').forEach(btn => {
+    btn.addEventListener('click', () => {
+      order = {
+        cat: btn.dataset.cat,
+        name: btn.dataset.name,
+        new: btn.dataset.new,
+        old: btn.dataset.old
+      };
+      document.getElementById('modal-cat').textContent = order.cat;
+      document.getElementById('modal-price').textContent = fmt(order.new) + ' сом';
+      document.getElementById('modal-old').textContent = fmt(order.old) + ' сом';
+      modal.classList.add('open');
+      generateQR();
+    });
+  });
+
+  document.getElementById('pay-finik').addEventListener('click', openFinik);
+  document.getElementById('modal-close').addEventListener('click', () => modal.classList.remove('open'));
+  modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('open'); });
+
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => item.classList.toggle('open'));
+  });
+</script>
+
+</body>
+</html>
